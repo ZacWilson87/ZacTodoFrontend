@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/variables";
+
+
+
+//base styles
+.app-root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin:unset;
+  padding: unset;
+}
+
+body  {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $charcoal;
+    background-color: $off-white;
+}
+
+input, textarea {
+  color: $dark-grey;
+  font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
