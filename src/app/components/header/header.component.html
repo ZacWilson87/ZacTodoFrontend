@@ -1,0 +1,15 @@
+<nav>
+    <div class="navbar-links">
+        <a href="#" class="link success">New</a>
+        <a href="#" class="link primary"  (click)="toggleEditing()">Edit</a>
+        <a href="#" class="link warning">Delete</a>
+    </div>
+    <div class="title">
+        <h2>Zac's Todo app</h2>
+    </div>
+</nav>
+
+<app-todos
+    [isEditing]="isEditing"
+    (isEditingChange)="onFormChangeEditFalse(false)">
+</app-todos>

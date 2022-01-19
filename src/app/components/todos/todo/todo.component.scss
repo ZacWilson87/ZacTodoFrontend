@@ -1,0 +1,43 @@
+
+tr {
+    width: 350px;
+
+    td {
+        width: 330px;
+        display: flex;
+        height: 100%;
+        padding-left: 15px;
+        justify-content: space-between;
+        
+
+        input[type="checkbox"]{
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        h4 {
+            display: inline;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        align-left {
+            text-align: left;
+        }
+    }
+
+            
+    tr:hover{
+        outline: 1px solid #ccc;
+    }
+
+    .selected{
+        outline: 1px solid red;
+        background-color: aqua;
+    }
+
+
+}
+
+
+

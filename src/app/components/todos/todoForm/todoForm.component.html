@@ -1,0 +1,65 @@
+<form method="POST" *ngIf="isEditing && selectedRow">
+    <h2>Editing: {{ selectedRow.title }}</h2>
+    <div class="form-group one" >
+        <label for="todo-completed" id="todo-completed">
+            <input type="checkbox" name="completed" id="todo-completed" checked="{{ selectedRow.completed ? selectedRow.completed : null }}" value="{{ selectedRow.completed }}">
+            Completed
+        </label>
+        <label for="todo-priority" id="todo-priority">Priority
+            <div class="select">
+                <select id="standard-select" (change)="onTodoPriorityChanged(todo)">
+                    <option value="{{selectedRow.priority}" selected disabled hidden>{{selectedRow.priority}}</option>
+                    <option *ngFor="let todo of todosList" value="{{todo.id}}" >{{todo.id}}</option>
+                </select>
+            </div>
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="todo-title">
+            Title
+            <input type="text" class="form-control" id="todo-title" name="title" value="{{selectedRow.title}}" required>
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="todo-description">Description
+            <textarea class="form-control" id="todo-description" name="description" value="{{ selectedRow.description }}" required></textarea>
+        </label>
+    </div>
+    <div class="actions">
+        <button type="submit" class="success">Save</button>
+        <button type="submit" class="warning">Delete</button>
+        
+    </div>
+</form>
+
+<!-- read only version of form -->
+
+<form method="POST" *ngIf="!isEditing && selectedRow">
+    <div class="form-group one" >
+        <label for="todo-completed" id="todo-completed">
+            <input type="checkbox" name="completed" id="todo-completed" checked="{{ selectedRow.completed }}" disabled>
+            Completed
+        </label>
+        <label for="todo-priority" id="todo-priority">Priority
+            <div class="select">
+                <select id="standard-select" disabled>
+                    <option *ngFor="let todo of todosList">{{selectedRow.priority}}</option>
+                </select>
+            </div>
+            
+        </label>
+
+    </div>
+    <div class="form-group">
+        <label for="todo-title">
+            Title
+            <input type="text" class="form-control" id="todo-title" name="title" value="{{selectedRow.title}}" required disabled>
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="todo-description">Description
+            <textarea class="form-control" id="todo-description" name="description" value="{{ selectedRow.description }}" required disabled></textarea>
+        </label>
+    </div>
+</form>
+

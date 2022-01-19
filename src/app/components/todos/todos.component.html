@@ -1,0 +1,21 @@
+<div class="todos-container">
+    <table class="left-section">
+        <thead>
+            <tr>
+                <th>Completed</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <app-todo [todosList]="todosList" (selectedRowEmitter)="selectedFormToLoad($event)"></app-todo>
+        </tbody>
+    </table>
+    <!-- *ngIf="selectedRow" -->
+    <div class="right-section">
+        <app-todo-form 
+            [selectedRow]="selectedRow" 
+            [todosList]="todosList"
+            [isEditing]="isEditing"
+            (todoPriorityChange)="todoPriorityAfterChange">
+        </app-todo-form>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<tr *ngFor="let todo of todosList; let i = index" (click)="onRowSelect(i+1, $event, todo )" style="display:flex">
+    <td id="{{ i+1 }}">
+        <h4 class="align-left">{{ i+1 }}. {{ todo.title }}</h4>
+        <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)">
+    </td>
+
+</tr>
